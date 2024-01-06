@@ -8,10 +8,10 @@ import footerImg from "../../assets/image/Footer-Image.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[#F99F1C] lg:gap-[10rem] py-10 flex flex-col lg:flex-row justify-around items-center mt-[10rem]">
-      <div className="ml-[5rem]">
-        <div className="form-control md:w-[40rem] relative bg-[#F99F1C]">
-          <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[white] btn btn-sm bg-[#FC6011] hover:bg-[#FC6011] join-item mr-2 px-10">
+    <div className="bg-[#F99F1C] gap-[5rem]  lg:gap-[10rem] py-10 flex flex-col lg:flex-row md:justify-around items-center mt-[10rem]">
+      <div className="md:ml-[5rem]">
+        <div className="form-control w-[22rem] md:w-[40rem] relative bg-[#F99F1C]">
+          <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[white] btn btn-sm bg-[#FC6011] hover:bg-[#FC6011] join-item mr-2 md:px-10">
             Subscribe{" "}
             <span>
               <BsArrowRight className="bg-[#FC6011] " />
@@ -20,7 +20,7 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Enter Your Email"
-            className="input pl-10 rounded-[1rem]" // Add padding to accommodate the icon
+            className="input md:pl-10 rounded-[1rem]" // Add padding to accommodate the icon
           />
         </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F99F1C] justify-end">
+      <div className="bg-[#F99F1C] ml-16 md:ml-0">
         <img
           className="bg-[#F99F1C] w-[50%] lg:w-[80%]"
           src={footerImg}

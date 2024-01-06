@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="menu  menu-horizontal px-1">
           <li>
             <details>
-              <summary className="border-2 px-10 py-3 bg-[white] text-[#FE834C] font-bold">
+              <summary className="border-2 px-10 py-3 bg-[white] text-[#FE834C] font-bold pr-4">
                 MENU
               </summary>
               <ul className="p-2 rounded-xl md:w-[10rem]">
