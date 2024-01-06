@@ -8,13 +8,13 @@ const Navbar = () => {
   return (
     <div className="navbar justify-between">
       <div>
-      <h1 className="font-maven-pro text-4xl font-bold">
+      <h1 className="font-maven-pro -ml-4 mr-4 text-2xl md:text-4xl font-bold">
         pti.
       </h1>
       </div>
       <div className="flex justify-center items-center">
       <div className="flex justify-center items-center">
-  <div className="form-control md:w-[30rem] relative">
+  <div className="form-control w-[12rem] md:w-[30rem] relative">
     <CiSearch className="absolute bg-white left-4 top-1/2 transform -translate-y-1/2 text-[#FE834C]" />
     <input
       type="text"
@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="menu  menu-horizontal px-1">
           <li>
             <details>
-              <summary className="border-2 bg-[white] text-[#FE834C] font-bold">
+              <summary className="border-2 px-10 py-3 bg-[white] text-[#FE834C] font-bold">
                 MENU
               </summary>
               <ul className="p-2 rounded-xl md:w-[10rem]">
