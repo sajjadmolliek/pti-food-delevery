@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   const [datas, setData] = useState([]);
@@ -42,7 +43,7 @@ const Slider = () => {
         <div className="mt-[10rem] mb-[2rem] flex justify-between mr-[2rem]">
           <div className="font-bold text-xl">Popular</div>
           <div className="flex justify-end mr-[2rem]">
-            <span className="font-bold text-[#fd9460]">Add Items</span>
+            <Link to={"/addItems"}><span className="font-bold text-[#fd9460]">Add Items</span></Link>
             <div className="swiper-button-prev" style={buttonStyles}>
               <button
                 style={
@@ -108,8 +109,7 @@ const Slider = () => {
         <div className="mt-[10rem] mb-6 flex justify-between">
           <div className="font-bold text-xl">Recommended</div>
           <div className="flex justify-end mr-[2rem]">
-            <span className="font-bold text-[#fd9460]">Add Items</span>
-            <div className="swiper-button-prev-popular" style={buttonStyles}>
+          <Link to={"/addItems"}><span className="font-bold text-[#fd9460]">Add Items</span></Link>            <div className="swiper-button-prev-popular" style={buttonStyles}>
               <button
                 style={
                   (currentIndex === 0 && datas.findIndex.IsRecommended) ||

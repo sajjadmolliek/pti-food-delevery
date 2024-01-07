@@ -8,6 +8,7 @@ import Favorite from "../Pages/Home/Favorite/Favorite";
 import Profile from "../Pages/Home/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import AddProduct from "../Components/AddProduct";
 
 const Routes = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const Routes = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/addItems",
+        element: <AddProduct />,
       },
       {
         path: "/login",
