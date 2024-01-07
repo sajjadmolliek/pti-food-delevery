@@ -8,7 +8,7 @@ import ExtraLogin from "../../Hooks/ExtraLogin/ExtraLogin";
 const image_hosting = import.meta.env.VITE_IMAGE_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?expiration=600&key=${image_hosting}`;
 const Register = () => {
-  // const { userSignUp, updateUserProfile } = useAuthProvider();
+  
   const {
     register,
     handleSubmit,
@@ -42,11 +42,14 @@ const Register = () => {
               <input
                 name="name"
                 type="text"
-                {...register("name")}
+                {...register("name",{ required: true })}
                 placeholder="User Name"
                 className="input input-bordered"
               />
             </div>
+            {errors.name && (
+                <span className="text-red-600">This field is required</span>
+              )}
             <div className="my-6">
               <label className="label">
                 <span className="label-text ">
@@ -59,7 +62,7 @@ const Register = () => {
                 placeholder="Choose a file"
                 className="file-input file-input-bordered w-full"
               />{" "}
-              {errors.photo && <span>This field is required</span>}
+              {errors.photo && <span className="text-red-600">This field is required</span>}
             </div>
             <div className="form-control">
               <label className="label">
@@ -68,11 +71,11 @@ const Register = () => {
               <input
                 name="email"
                 type="email"
-                {...register("email")}
+                {...register("email",{ required: true })}
                 placeholder="email"
                 className="input input-bordered"
               />
-              {/* {errors.email && <span className="text-red-600">This field is required</span>} */}
+              {errors.email && <span className="text-red-600">This field is required</span>}
             </div>
             <div className="form-control">
               <label className="label">
