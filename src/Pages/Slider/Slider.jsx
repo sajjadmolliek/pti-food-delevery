@@ -38,54 +38,139 @@ const Slider = () => {
 
   return (
     <>
-      <div className="mt-[10rem] mb-[2rem] flex justify-end mr-[2rem]">
-        <span className="font-bold text-[#fd9460]">Add Items</span>
-        <div className="swiper-button-prev" style={buttonStyles}>
-          <button style={(currentIndex === 0 || currentIndex === datas.length - 1) ? redColorStyle : {}}>
-            <FaChevronLeft />
-          </button>
+      <div>
+        <div className="mt-[10rem] mb-[2rem] flex justify-between mr-[2rem]">
+          <div className="font-bold text-xl">Popular</div>
+          <div className="flex justify-end mr-[2rem]">
+            <span className="font-bold text-[#fd9460]">Add Items</span>
+            <div className="swiper-button-prev" style={buttonStyles}>
+              <button
+                style={
+                  currentIndex === 0 || currentIndex === datas.length - 1
+                    ? redColorStyle
+                    : {}
+                }
+              >
+                <FaChevronLeft />
+              </button>
+            </div>
+            <div className="swiper-button-next" style={buttonStyles}>
+              <button
+                style={currentIndex === datas.length - 4 ? redColorStyle : {}}
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="swiper-button-next" style={buttonStyles}>
-          <button
-            style={(currentIndex === datas.length - 4) ? redColorStyle : {}}
-          >
-            <FaChevronRight />
-          </button>
-        </div>
+
+        <Swiper
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          modules={[Navigation]}
+          spaceBetween={25}
+          className="mySwiper"
+          onSlideChange={(swiper) => handleSwiperSlideChange(swiper)}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+            },
+            // when window width is >= 1024px (desktop)
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {datas.map((data) => (
+            <div key={data.Id}>
+              {data.IsPopular ? (
+                <SwiperSlide>
+                  <div>
+                    <img
+                      className="h-80 rounded-xl w-[17rem]"
+                      src={data.ImageUrl}
+                      alt="ImageUrl"
+                    />
+                    <h1 className="text-center">{data.Name}</h1>
+                  </div>
+                </SwiperSlide>
+              ) : (
+                " "
+              )}
+            </div>
+          ))}
+        </Swiper>
       </div>
 
-      <Swiper
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        modules={[Navigation]}
-        spaceBetween={25}
-        className="mySwiper"
-        onSlideChange={(swiper) => handleSwiperSlideChange(swiper)}
-        breakpoints={{
-          768: {
-            slidesPerView: 3,
-          },
-          // when window width is >= 1024px (desktop)
-          1024: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        {datas.map((data) => (
-          <SwiperSlide key={data.Id}>
-            <div>
-              <img
-                className="h-80 rounded-xl w-[17rem]"
-                src={data.ImageUrl}
-                alt="ImageUrl"
-              />
-              <h1 className="text-center">{data.Name}</h1>
+      <div>
+        <div className="mt-[10rem] mb-6 flex justify-between">
+          <div className="font-bold text-xl">Recommended</div>
+          <div className="flex justify-end mr-[2rem]">
+            <span className="font-bold text-[#fd9460]">Add Items</span>
+            <div className="swiper-button-prev-popular" style={buttonStyles}>
+              <button
+                style={
+                  (currentIndex === 0 && datas.findIndex.IsRecommended) ||
+                  (currentIndex === datas.length - 1 &&
+                    datas.findIndex.IsRecommended)
+                    ? redColorStyle
+                    : {}
+                }
+              >
+                <FaChevronLeft />
+              </button>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            <div className="swiper-button-next-popular" style={buttonStyles}>
+              <button
+                style={currentIndex === datas.length - 6 ? redColorStyle : {}}
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <Swiper
+          navigation={{
+            nextEl: ".swiper-button-next-popular",
+            prevEl: ".swiper-button-prev-popular",
+          }}
+          modules={[Navigation]}
+          spaceBetween={25}
+          className="mySwiper"
+          onSlideChange={(swiper) => handleSwiperSlideChange(swiper)}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+            },
+            // when window width is >= 1024px (desktop)
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {datas.map((data) => (
+            <div key={data.Id}>
+              {data.IsRecommended ? (
+                <SwiperSlide>
+                  <div>
+                    <img
+                      className="h-80 rounded-xl w-[17rem]"
+                      src={data.ImageUrl}
+                      alt="ImageUrl"
+                    />
+                    <h1 className="text-center">{data.Name}</h1>
+                  </div>
+                </SwiperSlide>
+              ) : (
+                " "
+              )}
+            </div>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 };
