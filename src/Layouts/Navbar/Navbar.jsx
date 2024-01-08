@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { BsPersonCircle } from "react-icons/Bs";
+import { AiOutlineUser } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import 'typeface-maven-pro';
 
@@ -137,7 +137,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <BsPersonCircle className="text-3xl mr-2 border-0 hidden lg:flex text-[#FE834C]"></BsPersonCircle>
+      <AiOutlineUser className="text-4xl text-white rounded-3xl p-1 mr-2 border-0 hidden lg:flex bg-[#FE834C]"></AiOutlineUser>
     </div>
   );
 };
