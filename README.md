@@ -5,4 +5,4 @@
 4. user can add demo items as per requirement and can check error validation.
 5. slider are use to see items ass per popular category and Remanded category.
 
-Website Live link: https://ptidelivery.surge.sh/
+Website Live link: https://magenta-tapioca-02e801.netlify.app/

@@ -14,10 +14,10 @@ const Slider = () => {
   useEffect(() => {
     axios
       .get(
-        `http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10`
+        `https://server-two-khaki.vercel.app/AddAssignment`
       )
       .then((res) => {
-        setData(res.data.Items);
+        setData(res.data[0].Items);
       });
   }, []);
 
